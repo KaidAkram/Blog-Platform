@@ -1,0 +1,21 @@
+
+
+<h1> Post title : {{post.title}}</h1>
+<p> Content : {{post.content}} </p>
+<h3> comments : </h3>
+{%for comment in comments%}
+<p> {{comment.content}}  | created by {{comment.author.username}}</p>
+
+
+{%endfor%}
+
+<form method ="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type ="submit"> Add comment </button>
+     
+
+</form>
+
+<a href = "{%url 'home' %}"> back </a>
+

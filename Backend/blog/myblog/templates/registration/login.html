@@ -1,0 +1,32 @@
+
+<body>
+    <container class="login-container">
+    <h1> log in </h1>
+   
+   <form method = "POST" action ={%url 'login'%}>
+       {%csrf_token%}
+   
+        <input type="hidden" name = "next" value = "next">
+       <div>
+           <label for = "username"> Username : </label>
+           <input type ="text" name = "username" id = "username" required>
+       </div>
+       <div>
+           <label for = "password"> password : </label>
+           <input type ="text" name = "password" id = "password" required>
+       </div>
+   
+       <button type= 'submit'> login </button>
+   </form>
+   
+   
+   {%if error%}
+   <p> {{error}} </p>
+   {%endif%}
+   
+   <p> Don't have account ?  <a href ="{% url "register"%}"> register here </a> </p>
+   
+   </container>
+   
+   
+   </body>

@@ -1,0 +1,11 @@
+
+
+<h1> create a new post </h1>
+
+<form method = "POST">
+    {%csrf_token%}
+    {{form.as_p}}
+    <button type = "submit"> Add post </button>
+
+</form>
+ 
